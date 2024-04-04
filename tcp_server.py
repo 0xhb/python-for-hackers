@@ -3,7 +3,7 @@ import socket as s
 
 server_socket = s.socket(s.AF_INET, s.SOCK_STREAM)
 
-host = "127.0.0.1"
+host = "192.168.174.120"
 print(host)
 port = 4444
 
@@ -16,6 +16,6 @@ while True:
     print(f"Connection received from {str(address)}")
 
     message = "Hello! Thank you for connecting to my serer" + '\r\n'
-    client_socket.send(message)
+    client_socket.send(message.encode("ascii"))
 
     client_socket.close()
